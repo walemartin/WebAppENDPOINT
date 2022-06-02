@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: walemartinwebappendpoint 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: walemartinwebappendpoint
+  template:
+    metadata:
+      labels:
+        app: walemartinwebappendpoint 
+    spec:
+      containers:
+        - name: walemartinwebappendpoint 
+          image: webappendpoint20220531192008.azurecr.io/walemartinwebappendpoint
+          ports:
+          - containerPort: 80
